@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="2dr-D3-rf5" customClass="TableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="57"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2dr-D3-rf5" id="V4d-M7-qjk">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64Y-gf-pdo">
+                        <rect key="frame" x="85" y="0.0" width="77" height="56"/>
+                        <color key="backgroundColor" red="0.31185344450000002" green="0.24222651210000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="通知button">
+                            <color key="titleColor" red="1" green="0.10501638639999999" blue="0.040773310549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAl-9E-yXD">
+                        <rect key="frame" x="0.0" y="0.0" width="77" height="56"/>
+                        <color key="backgroundColor" red="0.31185344450888475" green="0.24222651207348456" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="代理button">
+                            <color key="titleColor" red="1" green="0.10501638639999999" blue="0.040773310549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="64Y-gf-pdo" firstAttribute="leading" secondItem="YAl-9E-yXD" secondAttribute="trailing" constant="8" id="43W-5Q-vAU"/>
+                    <constraint firstAttribute="bottom" secondItem="64Y-gf-pdo" secondAttribute="bottom" id="8Qf-RY-JHb"/>
+                    <constraint firstAttribute="bottom" secondItem="64Y-gf-pdo" secondAttribute="bottom" id="MRn-bD-M9f"/>
+                    <constraint firstAttribute="trailing" secondItem="64Y-gf-pdo" secondAttribute="trailing" constant="215" id="NcH-bw-ODc"/>
+                    <constraint firstAttribute="trailing" secondItem="64Y-gf-pdo" secondAttribute="trailing" constant="215" id="OYX-io-ksV"/>
+                    <constraint firstAttribute="trailing" secondItem="YAl-9E-yXD" secondAttribute="trailing" constant="300" id="UKz-FI-jp6"/>
+                    <constraint firstItem="YAl-9E-yXD" firstAttribute="leading" secondItem="V4d-M7-qjk" secondAttribute="leading" id="a27-hE-dPn"/>
+                    <constraint firstItem="YAl-9E-yXD" firstAttribute="leading" secondItem="V4d-M7-qjk" secondAttribute="leading" id="cZV-fq-LVs"/>
+                    <constraint firstItem="64Y-gf-pdo" firstAttribute="leading" secondItem="YAl-9E-yXD" secondAttribute="trailing" constant="8" id="dQS-3C-kx7"/>
+                    <constraint firstItem="64Y-gf-pdo" firstAttribute="leading" secondItem="YAl-9E-yXD" secondAttribute="trailing" constant="8" id="h4o-b7-exe"/>
+                    <constraint firstItem="64Y-gf-pdo" firstAttribute="top" secondItem="V4d-M7-qjk" secondAttribute="top" id="ilV-Av-ND5"/>
+                    <constraint firstItem="YAl-9E-yXD" firstAttribute="top" secondItem="V4d-M7-qjk" secondAttribute="top" id="jZe-Ba-MFh"/>
+                    <constraint firstAttribute="bottom" secondItem="YAl-9E-yXD" secondAttribute="bottom" id="mGJ-cf-a7U"/>
+                    <constraint firstItem="64Y-gf-pdo" firstAttribute="top" secondItem="V4d-M7-qjk" secondAttribute="top" id="mTN-Yu-roZ"/>
+                    <constraint firstAttribute="bottom" secondItem="YAl-9E-yXD" secondAttribute="bottom" id="xix-la-Myl"/>
+                    <constraint firstItem="YAl-9E-yXD" firstAttribute="top" secondItem="V4d-M7-qjk" secondAttribute="top" id="y2t-39-K8p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="buttonDelegate" destination="YAl-9E-yXD" id="Ptx-To-qyP"/>
+                <outlet property="buttonNotification" destination="64Y-gf-pdo" id="HmY-9p-MWI"/>
+            </connections>
+            <point key="canvasLocation" x="-342.5" y="-30.5"/>
+        </tableViewCell>
+    </objects>
+</document>
