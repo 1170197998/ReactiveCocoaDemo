@@ -4,14 +4,11 @@
 //
 //  Created by ShaoFeng on 2017/2/13.
 //  Copyright © 2017年 ShaoFeng. All rights reserved.
-//  http://www.cocoachina.com/ios/20160106/14880.html?_t_t_t=0.9231971127446741
-//  http://www.cnblogs.com/fengmin/p/5662270.html
-//  http://benbeng.leanote.com/post/ReactiveCocoaTutorial-part1  不错
-//  http://www.infoq.com/cn/articles/reactivecocoa-ios-new-develop-framework
+//  http://www.cnblogs.com/fengmin/p/5662270.html  概念多
 //  http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/ //雷纯锋_全面
-//  http://www.jianshu.com/p/05544e4ac972
-//  https://my.oschina.net/u/2346786/blog/614316
-
+//  http://www.jianshu.com/p/05544e4ac972        各种使用
+//  https://my.oschina.net/u/2346786/blog/614316 各种使用
+//  http://www.jianshu.com/p/ff79a5ae0353 - > http://www.jianshu.com/p/aa155560bfed 用法全
 //  http://www.cocoachina.com/ios/20160729/17236.html API手册
 
 #import "ViewController.h"
