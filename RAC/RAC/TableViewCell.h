@@ -12,6 +12,7 @@
 static NSString *const NotificationName = @"NotificationName";
 @class TableViewCell;
 @protocol TableViewCellDelegate <NSObject>
+@optional
 - (void)tableViewCell:(TableViewCell *)cell buttonClick:(UIButton *)button;
 @end
 

@@ -19,7 +19,8 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
-@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (nonatomic,strong)RACCommand *commend;
 @property (nonatomic,strong)NSString *string;
 @end
@@ -42,7 +43,11 @@
     使用场景二:可以设置capacity数量来限制缓存的value的数量,即只缓充最新的几个值。
     */
     
-    [self test2];
+    //[self test4];
+    
+    [RACObserve(self, string) subscribeNext:^(NSString *string) {
+        NSLog(@"%@",string);
+    }];
 }
 
 - (void)test1
@@ -58,7 +63,7 @@
     }];
     
     //遍历字典
-    NSDictionary *dict = @{@"name":@"stevin",@"age":@18};
+    NSDictionary *dict = @{@"name":@"stevin",@"location":@"Beijing"};
     //RACTuple:元组类,类似NSArray,用来包装值.
     //RACSequence:RAC中的集合类，用于代替NSArray,NSDictionary,可以使用它来快速遍历数组和字典。
     [dict.rac_sequence.signal subscribeNext:^(RACTuple *x) {
@@ -85,13 +90,27 @@
 - (void)test3
 {
     //按钮点击事件
-    [[self.button1 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    [[self.button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSLog(@"rac_signalForControlEvents检测点击");
     }];
-    self.button1.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    self.button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         NSLog(@"rac_command检测点击");
         return [RACSignal empty];
     }];
+}
+
+- (void)test4
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [[tap rac_gestureSignal] subscribeNext:^(id x) {
+        NSLog(@"点击了label");
+    }];
+    self.testLabel.userInteractionEnabled = YES;
+    [self.testLabel addGestureRecognizer:tap];
+}
+
+- (IBAction)changeValue:(id)sender {
+    self.string = [NSString stringWithFormat:@"哈哈%d",rand() % 100];
 }
 
 - (void)didReceiveMemoryWarning {

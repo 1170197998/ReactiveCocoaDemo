@@ -22,30 +22,27 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     self.tableView.rowHeight = 60;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"ID"];
     
     //检测代理
     [[self rac_signalForSelector:@selector(tableViewCell:buttonClick:) fromProtocol:@protocol(TableViewCellDelegate)] subscribeNext:^(id x) {
-        NSLog(@"代理相应成功");
+        NSLog(@"代理响应成功");
     }];
     //检测通知
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:NotificationName object:nil] subscribeNext:^(id x) {
-        NSLog(@"%@",x);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:NotificationName object:nil] subscribeNext:^(NSNotification *notification) {
+        NSLog(@"通知响应成功:%@",notification.userInfo);
     }];
     
     //检测某个方法被调用
     [[self rac_signalForSelector:@selector(tableView:numberOfRowsInSection:)] subscribeNext:^(id x) {
         NSLog(@"tableView:numberOfRowsInSection:被调用!");
     }];
-    
-//    [[self rac_signalForSelector:@selector(tableView:numberOfRowsInSection:) fromProtocol:@protocol(UITableViewDataSource)] map:^id(id value) {
-//        return [@5 stringValue];
-//    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
